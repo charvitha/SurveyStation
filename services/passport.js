@@ -30,6 +30,7 @@ passport.use(
           done(null, existingUser);
         } else {
           //we dont have record with the profile id so create new
+          console.log(profile);
           new User({ googleID: profile.id })
             .save()
             .then(user => done(null, user));
